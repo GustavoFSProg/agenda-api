@@ -14,11 +14,15 @@
     "express": "^4.17.1",
     "md5": "^2.3.0",
     "mongoose": "^6.1.2",
+    "sucrase": "^3.20.3",
     "ts-node-dev": "^1.1.8",
     "tsc": "^2.0.3",
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "dev": "ts-node-dev --exit-child src/index.ts"
+    "dev": "ts-node-dev --exit-child src/index.ts",
+    "lint": "eslint src/**/*.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "start": "node dist/index.js"
   }
 }
