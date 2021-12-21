@@ -24,7 +24,7 @@ async function getAll(req: Request, res: Response) {
   try {
     const data = await userModel.find({}, 'name email')
 
-    return res.status(200).send(data)
+    return res.status(200).send({ data, msg: ` 💰 API Running on PORT: 8000` })
   } catch (error) {
     return res.status(400).send({ msg: 'ERROR!!', error })
   }
